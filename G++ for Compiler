@@ -1,0 +1,33 @@
+This note is refrens from : hhttps://linuxhint.com/install-and-use-g-on-ubuntu/
+
+## Install G++ compile in ubuntu 20 ##
+
+- sudo apt update 
+
+1. Install compiler from build-essential
+  - sudo apt install build-essential
+
+2. Check C++ Version
+  - g++ --version
+      gcc (Ubuntu 9.2.1-17ubuntu1) 9.2.1 20191102
+
+3. Install multiple compiler g++ for Ubuntu
+  - sudo apt install build-essential
+  - sudo apt -y install g++-7 g++-8 g++-9 g++-10 (this for multiple type of g++, you can choice one)
+Create a list of g++ alternative
+  - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-7 7
+  - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-8 8
+  - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-9 9
+  - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-10 10
+(simple command is :  - sudo apt -y install gcc-7 g++-7 gcc-8 g++-8 gcc-9 g++-9)
+4. Check avaiable g++ version
+  - sudo update-alternatives --config g++
+
+
+## Try with a program ##
+1. Make a simple program like Hello_world.cc
+2. Save the program 
+3. Use this command for build 
+  - g++ -o welcome welcome.cc
+  Then to run use this command
+  - ./welcome

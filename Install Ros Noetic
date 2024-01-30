@@ -1,0 +1,26 @@
+This memo refrens to : "http://wiki.ros.org/noetic/Installation/Ubuntu"
+
+## Installation ##
+1. Setup Computer untuk menerima software dari packages.ros.org. 
+   - sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
+
+2. Setup Password computer
+   - sudo apt install curl # if you haven't already installed curl
+   - curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add -
+
+3. Installasi 
+   - sudo apt update
+   - sudo apt install ros-noetic-desktop-full (This command is recommended installation : Everything in Desktop plus 2D/3D simulators and 2D/3D perception packages)
+      -> Step ini akan memakan banyak waktu karena banyaknya file yang perlu diinstall
+4. Environment Setup
+   - source /opt/ros/noetic/setup.bash
+  Set for Bash
+   - echo "source /opt/ros/noetic/setup.bash" >> ~/.bashrc
+   - source ~/.bashrc
+
+5. Dependencies for building packages
+   - sudo apt install python3-rosdep python3-rosinstall python3-rosinstall-generator python3-wstool build-essential
+  Initialize RosDep
+   - sudo apt install python3-rosdep
+   - sudo rosdep init
+   - rosdep update
